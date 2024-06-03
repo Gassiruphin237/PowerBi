@@ -5,9 +5,23 @@
     height: 100vh;
     margin: 0;
 }
-
+.react-tel-input .form-control{
+    width: 243px !important;
+    height: 50px !important;
+    border: 1px solid #00BFA6 !important ;
+    outline-color:#00BFA6 !important;
+    box-shadow:   0 0 0.4em #00BFA6 !important ; 
+    border-radius: 12px!important;
+}
+.react-tel-input .flag-dropdown{
+    border: none !important;
+    background: transparent !important;
+}
+.react-tel-input .flag-dropdown.open .selected-flag{
+    background: none !important;
+}
 h3 {
-    text-transform: uppercase;
+    text-transform:capitalize;
     color: #00BFA6;
     font-weight: bold;
 }
@@ -42,8 +56,8 @@ span {
     font-family: monospace; /* Optionnel, pour un effet de machine à écrire plus authentique */
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid black; /* Curseur */
-    animation: typing 4s steps(20, end), blink-caret 0.85s step-end infinite;
+    /* border-right: 2px solid black;  */
+    /* animation: typing 4s steps(20, end), blink-caret 0.85s step-end infinite; */
   }
 
   @keyframes typing {

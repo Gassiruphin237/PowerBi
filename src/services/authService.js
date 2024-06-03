@@ -21,3 +21,19 @@ export async function login(userData) {
         throw error;
     }
 }
+
+export const sendOtp = async (phoneNumber) => {
+    const response = await fetch('YOUR_API_ENDPOINT', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ phoneNumber })
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to send OTP');
+    }
+
+    return response.json();
+};

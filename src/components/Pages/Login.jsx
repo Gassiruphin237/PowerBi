@@ -4,41 +4,40 @@ import "../../styles/Login.css";
 import InputCustom from '../InputCustom';
 import { login } from '../../services/authService';
 import alertImg from '../../assets/alerte.png';
-
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    const [loginError, setLoginError] = useState('');
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Réinitialiser les messages d'erreur
         setPhoneNumberError('');
         setPasswordError('');
-        setLoginError('');
 
         // Validation des champs
         let isValid = true;
         if (!phoneNumber.trim()) {
-            setPhoneNumberError('Le numéro de téléphone est requis.');
-            isValid = false;
-        } else if (!/^\d{9}$/.test(phoneNumber.trim())) {
-            setPhoneNumberError('Le numéro de téléphone doit contenir au moins 9 chiffres.');
+            toast('Le numéro de téléphone est requis..')
             isValid = false;
         }
+        
         if (!password.trim()) {
-            setPasswordError('Le mot de passe est requis.');
+            toast('Le mot de passe est requis.')
             isValid = false;
         }
-        // } else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/.test(password.trim())) {
-        //     setPasswordError('Le mot de passe doit contenir au \n moins 8 caractères  avec \n au moins une majuscule et un symbole.');
-        //     isValid = false;
-        // }
-
+        else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/.test(password.trim())) {
+            toast('Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule et un symbole.')
+            isValid = false;
+        }
         if (isValid) {
             const userData = {
                 phoneNumber: phoneNumber,
@@ -51,26 +50,13 @@ function Login() {
                 // Handle successful login here (e.g., redirect to another page)
             } catch (error) {
                 console.error('Error during login:', error);
-                alert('Échec de la connexion. Veuillez réessayer.')
-                setLoginError('Échec de la connexion. Veuillez réessayer.');
+                toast('Échec de la connexion. Veuillez réessayer.')
             }
         }
     };
 
     return (
         <>
-            {/* Affichage du message d'erreur général */}
-            {/* {loginError && (
-                <div className='alert'>
-                    <div className='row'>
-                        <div className='message'>
-                            <img src={alert} alt='img' width={20} /> {loginError}
-                        </div>
-                        <span className='close' title='close'>X</span>
-                    </div>
-                </div>
-            )} */}
-
             <div className='container'>
                 <div className='row'>
                     <div className='img'>
@@ -84,20 +70,19 @@ function Login() {
                             </div>
                             <br /><br />
                             <div className='body-form'>
-                                <InputCustom
-                                    title="+237 XXX XXX XXX"
-                                    type='text'
+                                <PhoneInput
+                                    country={'cm'}
                                     value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                    onChange={(value) => setPhoneNumber(value)}
                                 />
-                                {phoneNumberError && <div className='error'>{phoneNumberError}</div>}
                                 <InputCustom
                                     title="XXXXXXXX"
                                     type='password'
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
-                                {passwordError && <div className='error'>{passwordError}</div>}
+                                <Link to="/forgot-password">mot de passe oublié ?</Link>
+                                <ToastContainer/>
                                 <button type='submit' className='custom-btn'>envoyer</button>
                                 <div><span>Pas de compte ?</span>  <a>créé en un ici</a> </div>
                             </div>
