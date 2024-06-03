@@ -5,7 +5,9 @@
     font-size: 14px;
     font-weight: 300;
     font-style: italic;
-    outline: none;
+    /* outline: none; */
+    border: 1px solid #00BFA6 ;
+    outline-color:#00BFA6;
     box-shadow:   0 0 0.4em #00BFA6 ; 
     padding: 12px;
     border: 0;
