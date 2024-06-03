@@ -141,3 +141,8 @@ color: #000;
       bottom: 40px;
     }
   }
+  @media only screen and (max-width: 425px){
+	.img img{
+        display: none !important;
+    }
+}
