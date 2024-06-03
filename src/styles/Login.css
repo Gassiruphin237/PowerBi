@@ -1,0 +1,129 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    color: #00BFA6;
+    font-weight: bold;
+}
+
+.img img {
+    cursor: pointer;
+    width: 220px;
+    /* border-radius: 50%; */
+    /* filter: blur(0.5px); */
+    animation: moveUpDown 2s ease-in-out infinite;
+}
+a{
+    color: #00BFA6;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.row {
+    gap: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    font-size: 16px;
+    font-style: italic;
+    color: gray;
+}
+
+.span {
+    font-family: monospace; /* Optionnel, pour un effet de machine à écrire plus authentique */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black; /* Curseur */
+    animation: typing 4s steps(20, end), blink-caret 0.85s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00BFA6; }
+  }
+
+.body-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.custom-btn {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 300;
+    background: #00BFA6;
+    border: 1px solid #00BFA6;
+    color: #ffff;
+}
+.error{
+    color: red;
+    font-style: italic;
+    font-size: 11px;
+}
+.custom-btn:hover{
+    background:#000;
+    border: none;
+
+}
+.row .close{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    color: #ffff;
+    cursor: pointer;
+    background: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.row .close:hover{
+background: #fff;
+border: 1px solid #000;
+color: #000;
+}
+.row .message{
+    color: #000 !important;
+    display: flex;
+}
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; 
+    border: 1px solid #000;
+    color: white;
+    cursor: pointer; 
+    padding: 10px 20px;
+    border-radius: 25px; 
+    font-size: 16px; 
+    animation: moveUpDown 2s ease-in-out infinite; 
+  }
+
+  @keyframes moveUpDown {
+    0%, 100% {
+      bottom: 10px;
+    }
+    50% {
+      bottom: 40px;
+    }
+  }
