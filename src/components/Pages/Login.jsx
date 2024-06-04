@@ -5,17 +5,20 @@ import InputCustom from '../InputCustom';
 import { login } from '../../services/authService';
 import alertImg from '../../assets/alerte.png';
 import PhoneInput from 'react-phone-input-2'
+import { Password } from 'primereact/password';
 import 'react-phone-input-2/lib/style.css'
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { Dialog } from 'primereact/dialog';
 
 function Login() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    
+    const [visible, setVisible] = useState(false)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -29,13 +32,9 @@ function Login() {
             toast('Le numéro de téléphone est requis..')
             isValid = false;
         }
-        
+
         if (!password.trim()) {
             toast('Le mot de passe est requis.')
-            isValid = false;
-        }
-        else if (!/(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/.test(password.trim())) {
-            toast('Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule et un symbole.')
             isValid = false;
         }
         if (isValid) {
@@ -75,17 +74,36 @@ function Login() {
                                     value={phoneNumber}
                                     onChange={(value) => setPhoneNumber(value)}
                                 />
-                                <InputCustom
-                                    title="XXXXXXXX"
-                                    type='password'
-                                    value={password}
+                                <Password value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    toggleMask
+                                    promptLabel="Entrez votre mot de passe" weakLabel="Trop faible" mediumLabel="Mot de passe Moyen" strongLabel="Mot de passe Complexe "
                                 />
                                 <Link to="/forgot-password">mot de passe oublié ?</Link>
-                                <ToastContainer/>
+                                <ToastContainer />
                                 <button type='submit' className='custom-btn'>envoyer</button>
-                                <div><span>Pas de compte ?</span>  <a>créé en un ici</a> </div>
+                                <div><span>Pas de compte ?</span>  <a href='#' onClick={(e) => setVisible(true)}>créé en un ici</a> </div>
                             </div>
+                            <Dialog
+                                visible={visible}
+                                modal
+                                header="Créer un compte"
+                                style={{ width: '80vw' }}
+                                onHide={() => setVisible(false)}
+                            ><br/>
+                                <div className='body'>
+                                    <div className='row'>
+                                    <InputCustom  title="entrer un prénom" />
+                                    <InputCustom  title="entrer un  nom" />
+                                    <InputCustom type="password" title="entrer un mot de passe" />
+                                    <InputCustom type="password" title="confirmer votre mot de passe"/>
+                                    </div>
+                                    <div className='footer'>
+                                    <button type='submit' className='custom-btn'>Enregistrer</button>
+                                    </div>
+                                   
+                                </div>
+                            </Dialog>
                         </form>
                     </div>
                 </div>

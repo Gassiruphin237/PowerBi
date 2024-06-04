@@ -1,4 +1,4 @@
-#input {
+/* #input {
     width: 30px !important;
     height: 20px !important;
     border: none !important;
@@ -10,6 +10,32 @@
     cursor: not-allowed;
     pointer-events: none;
     padding: 10px;
+}
+ 
+#input:nth-child(1) {
+    cursor: pointer;
+    pointer-events: all;
+}
+@media only screen and (max-width: 425px){
+	img{
+        width: 150px;
+    }
+} */
+#input {
+    width: 40px;
+    border: none;
+    border-bottom: 3px solid #00BFA6;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 36px;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+ 
+#input:focus {
+    border-bottom: 3px solid #000;
+    outline: none;
+    color: #00BFA6;
 }
  
 #input:nth-child(1) {

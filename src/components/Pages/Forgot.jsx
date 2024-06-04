@@ -38,8 +38,8 @@ function Forgot() {
             <ToastContainer />
             <div className='container'>
 
-                <h3>Mot de passe oublié ?</h3>
-                <img src={img} alt='img' width={150} /><br />
+               <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mot de passe oublié ?</h3>
+                <img src={img} alt='img' width={200} /><br />
                 <div className='infos'>
                     <span>Vous avez oublié votre mot de passe, c'est simple,<br /> insérez votre numéro de téléphone et nous vous<br /> enverrons un OTP.</span>
                 </div>

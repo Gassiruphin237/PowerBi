@@ -3,6 +3,7 @@ import { Route, Routes, Link, Navigate } from 'react-router-dom';
 import Login from './components/Pages/Login';
 import Forgot from './components/Pages/Forgot';
 import Otp from './components/Pages/Otp';
+import "primereact/resources/themes/lara-light-cyan/theme.css";
 
 function App() {
     return (
