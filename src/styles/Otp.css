@@ -1,0 +1,18 @@
+#input {
+    width: 30px !important;
+    height: 20px !important;
+    border: none !important;
+    border-bottom: 2px solid #00BFA6 !important;
+    outline: none !important;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 26px;
+    cursor: not-allowed;
+    pointer-events: none;
+    padding: 10px;
+}
+ 
+#input:nth-child(1) {
+    cursor: pointer;
+    pointer-events: all;
+}
