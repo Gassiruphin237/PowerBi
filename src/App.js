@@ -4,6 +4,7 @@ import Login from './components/Pages/Login';
 import Forgot from './components/Pages/Forgot';
 import Otp from './components/Pages/Otp';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import NewPassword from './components/Pages/NewPassword';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/forgot-password" element={<Forgot/>} />
                 <Route path="/otp" element={<Otp />} />
+                <Route path="/NewPassword" element={<NewPassword />} />
             </Routes>
         </div>
     );

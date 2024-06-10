@@ -1,11 +1,15 @@
 import React, { useState, useRef } from 'react';
 import '../../styles/Otp.css';
 import otp from '../../assets/key.svg';
+import { useNavigate } from 'react-router-dom';
 
 function Otp() {
   const [otpValue, setOtpValue] = useState('');
   const inputs = useRef([]); // Array to store input refs
-
+  const navigate = useNavigate()
+  const test = () => {
+    navigate("/NewPassword");
+  }
   const handleChange = (event, index) => {
     const value = event.target.value;
     if (isNaN(value)) return; // Prevent non-numeric input
@@ -41,19 +45,19 @@ function Otp() {
           .fill(0)
           .map((_, index) => (
             <input
-            id='input'
+              id='input'
               key={index}
               ref={(el) => (inputs.current[index] = el)}
               type="text"
               maxLength="1"
               inputMode="numeric"
               value={otpValue[index] || ''}
-              onChange={(e) => handleChange(e, index)}event
+              onChange={(e) => handleChange(e, index)} event
             />
           ))}
       </div>
       <br />
-      <button type="submit" className="custom-btn">
+      <button type="submit" onClick={test} className="custom-btn">
         Vérifier
       </button>
     </div>

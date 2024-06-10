@@ -23,7 +23,7 @@ export async function login(userData) {
 }
 
 export const sendOtp = async (phoneNumber) => {
-    const response = await fetch('YOUR_API_ENDPOINT', {
+    const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -37,3 +37,24 @@ export const sendOtp = async (phoneNumber) => {
 
     return response.json();
 };
+export async function newPassword(userData) {
+    try {
+        const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || 'Login failed');
+        }
+
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
