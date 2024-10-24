@@ -1,10 +1,10 @@
-.row,.head{
+/* /* #home .row,.head{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
-}
+} */
 .head{
    font-weight: bold; 
 }
@@ -16,4 +16,4 @@
     border-radius: 10px;
     cursor: pointer;
 
-}
+} 

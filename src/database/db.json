@@ -1,0 +1,60 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "code": "DI",
+      "content": "Déclaration d'intérêt"
+    },
+    {
+      "id": 2,
+      "code": "ITA",
+      "content": "Invitation du MIFI"
+    },
+    {
+      "id": 3,
+      "code": "AI",
+      "content": "Acceptation de l'invitation"
+    },
+    {
+      "id": 4,
+      "code": "PFCSQ",
+      "content": "Payement Frais CSQ"
+    },
+    {
+      "id": 5,
+      "code": "LP",
+      "content": "Liste personalisée"
+    },
+    {
+      "id": 6,
+      "code": "AR",
+      "content": "Accusé de reception du MIFI"
+    },
+    {
+      "id": 7,
+      "code": "IR",
+      "content": "Intention de rejet"
+    },
+    {
+      "id": 8,
+      "code": "CSQ",
+      "content": "CSQ accepté"
+    },
+    {
+      "id": 9,
+      "code": "CSQ",
+      "content": "Demande réjetté",
+      "date": "2024-09-07",
+      "color": "#36572C"
+    }
+  ],
+  "data": [
+    {
+      "id": 4,
+      "code": "PFCSQ",
+      "content": "Payement Frais CSQ",
+      "date": "2024-09-16",
+      "color": "#360A5F"
+    }
+  ]
+}

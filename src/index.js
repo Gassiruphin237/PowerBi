@@ -7,14 +7,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+// import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
         
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <PrimeReactProvider>
+   <App />
+  {/* <PrimeReactProvider>
      <App />
-  </PrimeReactProvider>
+  </PrimeReactProvider> */}
   </BrowserRouter>
 );
 

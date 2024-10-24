@@ -9,15 +9,15 @@ import img from "../../assets/phone-img.svg"
 import { Link, useNavigate } from 'react-router-dom';
 function Forgot() {
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    // const [error, setError] = useState('');
+    // const [success, setSuccess] = useState('');
 
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         console.log("first")
         e.preventDefault();
-        setError('');
-        setSuccess('');
+        // setError('');
+        // setSuccess('');
 
         if (!phoneNumber) {
             toast('Le numéro de téléphone est requis..')
